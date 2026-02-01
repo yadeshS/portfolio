@@ -306,3 +306,58 @@ a.btn.secondary:hover{
   background: rgba(255,255,255,0.08);
   box-shadow: 0 10px 26px rgba(0,0,0,0.35);
 }
+
+/* ---------- Contact Form ---------- */
+.contact-form {
+  max-width: 520px;
+  margin: 16px auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 10px;
+  padding: 12px 14px;
+  color: #e8eefc;
+  font-size: 14px;
+  outline: none;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: rgba(232,238,252,0.55);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: rgba(120,140,255,0.6);
+  background: rgba(255,255,255,0.12);
+}
+
+.contact-form button {
+  align-self: center;
+  margin-top: 6px;
+  min-width: 160px;
+}
+
+/* CTA form container */
+.cta {
+  text-align: center;
+  padding: 26px 20px;
+  background: linear-gradient(
+    135deg,
+    rgba(120,140,255,0.12),
+    rgba(0,255,209,0.08)
+  );
+  border: 1px solid rgba(255,255,255,0.16);
+}
+
+.cta-text {
+  max-width: 620px;
+  margin: 10px auto 10px;
+  color: rgba(232,238,252,0.85);
+}
