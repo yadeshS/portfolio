@@ -6,30 +6,21 @@
 
 @media (min-width: 768px) {
   .hero-grid {
-    grid-template-columns: 160px 1fr;
+    grid-template-columns: 110px 1fr; /* tighter column */
   }
 }
 
 .profile-pic {
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
   object-fit: cover;
-  object-position: top; /* keeps face visible */
-  border: 3px solid rgba(255,255,255,0.25);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  object-position: top;
+  border: 2px solid rgba(255,255,255,0.25);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .profile-pic:hover {
-  transform: scale(1.06);
-  box-shadow: 0 0 28px rgba(232,238,252,0.45);
-}
-
-body {
-  animation: fadeIn 0.8s ease-in;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  transform: scale(1.04);
+  box-shadow: 0 0 18px rgba(232,238,252,0.35);
 }
