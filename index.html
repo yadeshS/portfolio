@@ -4,100 +4,116 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Yadesh Harihar | Portfolio</title>
-  <style>
-    :root { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
-    body { margin: 0; background: #0b0f19; color: #e8eefc; }
-    .wrap { max-width: 980px; margin: 0 auto; padding: 32px 18px 70px; }
-    .card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.10);
-            border-radius: 16px; padding: 18px; }
-    .row { display: grid; gap: 14px; }
-    @media (min-width: 820px) { .row-3 { grid-template-columns: repeat(3, 1fr); } .row-2{ grid-template-columns: repeat(2, 1fr); } }
-    h1 { font-size: 34px; margin: 0 0 8px; }
-    h2 { font-size: 18px; margin: 0 0 12px; letter-spacing: 0.3px; }
-    p { line-height: 1.6; margin: 0; color: rgba(232,238,252,0.86); }
-    .muted { color: rgba(232,238,252,0.70); }
-    .hero { padding: 22px; }
-    .btns { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
-    a.btn { text-decoration: none; color: #0b0f19; background: #e8eefc; padding: 10px 12px;
-            border-radius: 12px; font-weight: 600; }
-    a.btn.secondary { background: transparent; color: #e8eefc; border: 1px solid rgba(255,255,255,0.18); }
-    .section { margin-top: 18px; }
-    .tag { display:inline-block; padding: 6px 10px; border-radius: 999px;
-           border: 1px solid rgba(255,255,255,0.18); margin: 6px 8px 0 0; font-size: 13px; }
-    footer { margin-top: 26px; text-align: center; }
-  </style>
+
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-  <main class="wrap">
-<section class="card hero hero-grid">
-  <img src="assets/IMG_4780.jpeg"
-       alt="Yadesh Harihar profile photo"
-       class="profile-pic"/>
+  <!-- NAVBAR -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="#top">Yadesh</a>
 
-  <div>
-    <h1>Yadesh Harihar</h1>
-    <p class="muted">MS in Information Technology @ ASU • Aspiring Cloud Engineer</p>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
+        ☰ Menu
+      </button>
 
-    <p style="margin-top:10px;">
-      I’m building cloud and data projects to understand scalable infrastructure,
-      automation, and real-world deployment.
-    </p>
-
-    <div class="btns">
-      <a class="btn" href="#">Resume (PDF)</a>
-      <a class="btn secondary" href="https://github.com/yadeshS" target="_blank" rel="noreferrer">GitHub</a>
-      <a class="btn secondary" href="#" target="_blank" rel="noreferrer">LinkedIn</a>
+      <div class="nav-links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#certs">Certifications</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </div>
     </div>
-  </div>
-</section>
+  </nav>
 
-    <section class="section card">
-      <h2>About</h2>
-      <p>
-        I’m a Master’s student focused on cloud engineering fundamentals—compute, storage, networking, IAM, and
-        deployment. I learn best by building and documenting projects, and I’m actively improving my skills in Python, SQL,
-        and cloud services.
-      </p>
-    </section>
+  <main id="top" class="wrap">
+    <!-- HERO -->
+    <section class="card hero hero-grid reveal">
+      <img
+        src="assets/IMG_4780.jpeg"
+        alt="Yadesh Harihar profile photo"
+        class="profile-pic"
+      />
 
-    <section class="section">
-      <h2 style="margin:0 0 12px;">Projects</h2>
-      <div class="row row-3">
-        <div class="card">
-          <h2>Cloud Project (In Progress)</h2>
-          <p class="muted">AWS • IAM • S3 • EC2</p>
-          <p style="margin-top:10px;">Building a small cloud deployment project and documenting each step.</p>
-          <p style="margin-top:12px;"><span class="muted">Link:</span> <a class="btn secondary" href="#" target="_blank" rel="noreferrer">Repo</a></p>
-        </div>
+      <div>
+        <h1>Yadesh Harihar</h1>
+        <p class="muted">MS in Information Technology @ ASU • Aspiring Cloud Engineer</p>
 
-        <div class="card">
-          <h2>KWIZZ CHAMP</h2>
-          <p class="muted">Accessibility • Voice • Automation</p>
-          <p style="margin-top:10px;">A solution to support visually impaired students with scribe + voice-based interactions.</p>
-          <p style="margin-top:12px;"><span class="muted">Link:</span> <a class="btn secondary" href="#" target="_blank" rel="noreferrer">Repo</a></p>
-        </div>
+        <p style="margin-top:10px;">
+          I’m building cloud and data projects to understand scalable infrastructure,
+          automation, and real-world deployment.
+        </p>
 
-        <div class="card">
-          <h2>Employee Handler</h2>
-          <p class="muted">React • Node.js • MongoDB</p>
-          <p style="margin-top:10px;">Tracks attendance, salary distribution, and employee activity monitoring.</p>
-          <p style="margin-top:12px;"><span class="muted">Link:</span> <a class="btn secondary" href="#" target="_blank" rel="noreferrer">Repo</a></p>
+        <div class="btns">
+          <a class="btn" href="#" target="_blank" rel="noreferrer">Resume (PDF)</a>
+          <a class="btn secondary" href="https://github.com/yadeshS" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="btn secondary" href="#" target="_blank" rel="noreferrer">LinkedIn</a>
         </div>
       </div>
     </section>
 
-    <section class="section card">
+    <!-- ABOUT -->
+    <section id="about" class="section card reveal">
+      <h2>About</h2>
+      <p>
+        I’m a Master’s student focused on cloud engineering fundamentals—compute, storage, networking, IAM, and deployment.
+        I learn best by building and documenting projects, and I’m actively improving my skills in Python, SQL, and cloud services.
+      </p>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section reveal">
+      <h2 class="section-title">Projects</h2>
+
+      <div class="row row-3">
+        <div class="card project-card reveal">
+          <h2>Cloud Project (In Progress)</h2>
+          <p class="muted">AWS • IAM • S3 • EC2</p>
+          <p class="mt10">Building a small cloud deployment project and documenting each step.</p>
+          <p class="mt12">
+            <span class="muted">Link:</span>
+            <a class="btn secondary" href="#" target="_blank" rel="noreferrer">Repo</a>
+          </p>
+        </div>
+
+        <div class="card project-card reveal">
+          <h2>KWIZZ CHAMP</h2>
+          <p class="muted">Accessibility • Voice • Automation</p>
+          <p class="mt10">A solution to support visually impaired students with scribe + voice-based interactions.</p>
+          <p class="mt12">
+            <span class="muted">Link:</span>
+            <a class="btn secondary" href="#" target="_blank" rel="noreferrer">Repo</a>
+          </p>
+        </div>
+
+        <div class="card project-card reveal">
+          <h2>Employee Handler</h2>
+          <p class="muted">React • Node.js • MongoDB</p>
+          <p class="mt10">Tracks attendance, salary distribution, and employee activity monitoring.</p>
+          <p class="mt12">
+            <span class="muted">Link:</span>
+            <a class="btn secondary" href="#" target="_blank" rel="noreferrer">Repo</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section id="certs" class="section card reveal">
       <h2>Certifications</h2>
       <p class="muted">Add completed + in-progress certifications here.</p>
-      <div style="margin-top:10px;">
+      <div class="tags mt10">
         <span class="tag">AWS Cloud Practitioner (In progress)</span>
         <span class="tag">Databricks (Add if completed)</span>
       </div>
     </section>
 
-    <section class="section card">
+    <!-- SKILLS -->
+    <section id="skills" class="section card reveal">
       <h2>Skills</h2>
-      <div style="margin-top:10px;">
+      <div class="tags mt10">
         <span class="tag">AWS (learning)</span>
         <span class="tag">Python</span>
         <span class="tag">SQL</span>
@@ -107,15 +123,18 @@
       </div>
     </section>
 
-    <section class="section card">
+    <!-- CONTACT -->
+    <section id="contact" class="section card reveal">
       <h2>Contact</h2>
       <p>Email: <span class="muted">ysenthi2@asu.edu</span></p>
-      <p style="margin-top:6px;">Location: <span class="muted">Arizona, USA</span></p>
+      <p class="mt6">Location: <span class="muted">Arizona, USA</span></p>
     </section>
 
-    <footer class="muted">
-      <p>© <script>document.write(new Date().getFullYear())</script> Yadesh Harihar</p>
+    <footer class="muted footer">
+      <p>© <span id="year"></span> Yadesh Harihar</p>
     </footer>
   </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
