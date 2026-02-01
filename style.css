@@ -1,33 +1,26 @@
-/* --- HERO FIX --- */
-.hero-grid {
-  display: grid;
+.hero-grid{
+  display:grid;
   grid-template-columns: 1fr;
-  gap: 16px;
-  align-items: center;
+  gap:16px;
+  align-items:center;
 }
 
-@media (min-width: 900px) {
-  .hero-grid {
-    grid-template-columns: auto 1fr;
-  }
+@media(min-width:900px){
+  .hero-grid{ grid-template-columns: 110px 1fr; }
 }
 
-/* HARD CONSTRAINT ON IMAGE */
-.profile-pic {
-  max-width: 96px;
-  max-height: 96px;
-  width: 96px;
-  height: 96px;
-  border-radius: 50%;
-  object-fit: cover;
-  object-position: top;
-  border: 2px solid rgba(255,255,255,0.25);
-  margin-bottom: 6px;
+.profile-pic{
+  width:96px;
+  height:96px;
+  max-width:96px;
+  max-height:96px;
+  border-radius:50%;
+  object-fit:cover;
+  object-position:top;
+  border:2px solid rgba(255,255,255,0.25);
+  margin:0 auto; /* centers on mobile */
 }
 
-/* CENTER IMAGE ON SMALL SCREENS */
-@media (max-width: 899px) {
-  .profile-pic {
-    margin: 0 auto;
-  }
+@media(min-width:900px){
+  .profile-pic{ margin:0; } /* aligns left on desktop */
 }
