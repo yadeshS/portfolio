@@ -361,3 +361,123 @@ a.btn.secondary:hover{
   margin: 10px auto 10px;
   color: rgba(232,238,252,0.85);
 }
+
+/* ---------- Certifications (Premium Cards) ---------- */
+.section-head{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.section-head p{ max-width: 520px; }
+
+.cert-grid{
+  display:grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  margin-top: 12px;
+}
+@media (min-width: 820px){
+  .cert-grid{ grid-template-columns: 1fr 1fr; }
+}
+
+.cert{
+  background: rgba(255,255,255,0.045);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 16px;
+  padding: 16px;
+  transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
+}
+.cert:hover{
+  transform: translateY(-2px);
+  background: rgba(255,255,255,0.07);
+  border-color: rgba(255,255,255,0.16);
+}
+
+.cert-top{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap: 12px;
+}
+
+.cert-left{
+  display:flex;
+  align-items:center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.cert-logo{
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 18px rgba(0,0,0,0.35));
+}
+
+.cert-icon{
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.10);
+  font-size: 22px;
+}
+
+.cert-title{
+  margin: 0 0 4px;
+  font-size: 16px;
+  letter-spacing: 0.2px;
+}
+.cert-meta{ margin: 0; font-size: 13px; }
+
+.badge{
+  font-size: 12px;
+  font-weight: 800;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.18);
+  white-space: nowrap;
+}
+.badge.inprogress{
+  background: rgba(120,140,255,0.16);
+  border-color: rgba(120,140,255,0.35);
+}
+.badge.planned{
+  background: rgba(255,140,0,0.10);
+  border-color: rgba(255,140,0,0.28);
+}
+
+.progress{
+  margin-top: 12px;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.08);
+  overflow:hidden;
+  border: 1px solid rgba(255,255,255,0.10);
+}
+.progress span{
+  display:block;
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(120,140,255,0.9), rgba(0,255,209,0.8));
+}
+
+.cert-actions{
+  margin-top: 12px;
+  display:flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* smaller button variant */
+a.btn.small{
+  padding: 8px 10px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 13px;
+}
