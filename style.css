@@ -238,6 +238,11 @@ a.btn.secondary:hover{
 }
 .project-card:hover::before{ opacity:1; }
 
+/* Featured project spans full grid width */
+.project-card.featured {
+  grid-column: 1 / -1;
+}
+
 /* Tags */
 .tags{ display:flex; flex-wrap:wrap; gap: 8px; }
 .tag{
