@@ -144,26 +144,22 @@ body::after{
   box-shadow: 0 0 22px rgba(0,255,173,0.55);
 }
 
-.fixed-social a img {
+..fixed-social a img {
   width: 22px;
   height: 22px;
   object-fit: contain;
   display: block;
-  filter: brightness(0) invert(1);
+  filter: drop-shadow(0 0 4px rgba(0,0,0,0.45));
+  opacity: 0.95;
 }
 
 .fixed-social a.linkedin img {
-  filter: none;
+  filter: drop-shadow(0 0 4px rgba(0,0,0,0.45));
 }
+
 .fixed-social a:hover {
   transform: translateY(-2px);
   box-shadow: 0 0 22px rgba(0,255,173,0.55);
-}
-
-.fixed-social a img {
-  width: 20px;
-  height: 20px;
-  object-fit: contain;
 }
 
 .fixed-social a:hover {

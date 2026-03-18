@@ -38,8 +38,22 @@ function setActiveLink(){
   });
 }
 
-window.addEventListener("scroll", setActiveLink, { passive: true });
-setActiveLink();
+if ('IntersectionObserver' in window) {
+  const navObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        linkEls.forEach(a => a.classList.toggle('active', a.getAttribute('href') === `#${id}`));
+      }
+    });
+  }, { rootMargin: '-40% 0px -55% 0px', threshold: 0.35 });
+
+  sections.forEach(section => navObserver.observe(section));
+} else {
+  window.addEventListener("scroll", setActiveLink, { passive: true });
+  setActiveLink();
+}
+
 
 // Close menu after clicking a link (mobile)
 linkEls.forEach(a => a.addEventListener("click", () => {
