@@ -100,13 +100,19 @@ body::after{
   justify-content: center;
   width: 44px;
   height: 44px;
-  background: rgba(4, 12, 30, 0.9);
-  border: 1px solid rgba(0,255,173,0.45);
+  background: rgba(9, 18, 42, 0.86);
+  border: 1px solid rgba(0,255,173,0.75);
   border-radius: 999px;
   color: #fff;
   text-decoration: none;
   font-size: 0.85rem;
-  transition: transform 150ms ease, box-shadow 150ms ease;
+  transition: transform 150ms ease, box-shadow 150ms ease, background 150ms ease;
+}
+
+.fixed-social a:hover {
+  background: rgba(0,255,173,0.18);
+  transform: translateY(-2px);
+  box-shadow: 0 0 22px rgba(0,255,173,0.55);
 }
 
 .fixed-social a img {
@@ -114,6 +120,7 @@ body::after{
   height: 22px;
   object-fit: contain;
   display: block;
+  filter: brightness(0) invert(1);
 }
 
 .fixed-social a:hover {
