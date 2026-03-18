@@ -475,27 +475,30 @@ a.btn.secondary:hover{
 .project-card:hover::before{ opacity:1; }
 
 /* Featured project spans full grid width */
-.project-card.featured {
-  grid-column: 1 / -1;
+.project-card {
   position: relative;
+  overflow: hidden;
+  padding: 24px;
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.project-card.featured::before {
-  content: "Featured";
-  position: absolute;
-  top: 14px;
-  right: 14px;
-  padding: 6px 12px;
-  border-radius: 999px;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.3px;
-  background: rgba(120, 140, 255, 0.24);
-  border: 1px solid rgba(120, 140, 255, 0.35);
-  color: rgba(232, 238, 252, 0.92);
-  backdrop-filter: blur(8px);
-  pointer-events: none;
+.project-card::before{
+  content:"";
+  position:absolute;
+  inset:-35%;
+  background: radial-gradient(circle at 20% 20%, rgba(120, 140, 255, 0.10), transparent 60%);
+  transform: translateX(-40%) rotate(10deg);
+  opacity:0;
+  transition: opacity 220ms ease;
+  pointer-events:none;
 }
+.project-card:hover::before{ opacity:1; }
+
+.project-card h2{ margin-top:0; }
+
 /* Tags */
 .tags{ display:flex; flex-wrap:wrap; gap: 8px; }
 .tag{
