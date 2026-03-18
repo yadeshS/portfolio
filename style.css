@@ -98,19 +98,26 @@ body::after{
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 42px;
-  height: 42px;
+  width: 46px;
+  height: 46px;
   background: rgba(4, 12, 30, 0.8);
   border: 1px solid rgba(0,255,173,0.35);
   border-radius: 999px;
   color: #fff;
-  font-weight: 700;
   text-decoration: none;
   font-size: 0.85rem;
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+.fixed-social a img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
 }
 
 .fixed-social a:hover {
-  box-shadow: 0 0 20px rgba(0,255,173,0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 0 22px rgba(0,255,173,0.45);
 }
 @keyframes fadeIn { from{opacity:0;} to{opacity:1;} }
 
@@ -415,9 +422,17 @@ a.btn.secondary:hover{
 .row {
   display:grid;
   gap:18px;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: 1fr;
   justify-content: center;
   width: 100%;
+}
+
+@media (min-width: 920px) {
+  .row { grid-template-columns: repeat(2, minmax(280px, 1fr)); }
+}
+
+@media (min-width: 1300px) {
+  .row-3 { grid-template-columns: repeat(3, 1fr); }
 }
 
 /* Make featured project stand out on wide screens */
