@@ -220,8 +220,14 @@ a.btn.secondary:hover{
 }
 
 /* Projects grid */
-.row { display:grid; gap:14px; }
-@media (min-width: 820px){
+.row {
+  display:grid;
+  gap:14px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+/* Optional: keep an explicit 3-column layout for larger screens */
+@media (min-width: 1140px){
   .row-3 { grid-template-columns: repeat(3, 1fr); }
 }
 
