@@ -8,35 +8,37 @@
   <meta property="og:description" content="Cloud engineering student building scalable cloud + data projects. Explore projects, certifications, and contact info." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://yadeshs.github.io/portfolio/" />
-  <meta property="og:image" content="https://yadeshs.github.io/portfolio/assets/IMG_4780.jpg" />
+  <meta property="og:image" content="https://yadeshs.github.io/portfolio/assets/IMG_4780.jpeg" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Yadesh Harihar Senthilkumar | Portfolio" />
   <meta name="twitter:description" content="Cloud engineering student building scalable cloud + data projects. Explore projects, certifications, and contact info." />
-  <meta name="twitter:image" content="https://yadeshs.github.io/portfolio/assets/IMG_4780.jpg" />
+  <meta name="twitter:image" content="https://yadeshs.github.io/portfolio/assets/IMG_4780.jpeg" />
   <title>Yadesh Harihar Senthilkumar | Portfolio</title>
 
-  <!-- PWA / Home screen support -->
   <meta name="theme-color" content="#0b0f19" />
   <link rel="manifest" href="manifest.json" />
   <link rel="apple-touch-icon" href="assets/favicon.png" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png">
   <link rel="shortcut icon" href="assets/favicon.png">
+
   <!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-SLYGKKPNC0"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-SLYGKKPNC0');
-</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SLYGKKPNC0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-SLYGKKPNC0');
+  </script>
 
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
+  <!-- Glowing cursor orb -->
+  <div id="cursor-orb" aria-hidden="true"></div>
+
   <!-- NAVBAR -->
   <nav class="nav">
     <div class="nav-inner">
@@ -53,9 +55,11 @@
 
       <div class="nav-links" id="navLinks">
         <a href="#about">About</a>
+        <a href="#whatido">What I Do</a>
+        <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
-        <a href="#certs">Certifications</a>
-        <a href="#skills">Skills</a>
+        <a href="#techstack">Tech Stack</a>
+        <a href="#certs">Certs</a>
         <a href="#contact">Contact</a>
       </div>
     </div>
@@ -76,230 +80,288 @@
   <a class="resume-fab" href="assets/resume/Yadesh_Harihar_Resume.pdf" target="_blank" rel="noopener" aria-label="Download resume">Resume</a>
 
   <main id="top" class="wrap">
+
     <!-- HERO -->
-<section class="card hero reveal hero-section">
-  <div class="hero-grid">
-    <div class="hero-photo">
-      <div class="profile-ring"></div>
-      <img
-        src="./assets/IMG_4780.jpg"
-        alt="Yadesh Harihar profile photo"
-        class="profile-pic"
-        loading="lazy"
-        decoding="async"
-      />
-    </div>
+    <section class="card hero reveal hero-section">
+      <div class="hero-grid">
+        <div class="hero-photo">
+          <div class="profile-ring"></div>
+          <img
+            src="./assets/IMG_4780.jpeg"
+            alt="Yadesh Harihar profile photo"
+            class="profile-pic"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
 
-    <div class="hero-text">
-      <h1>Yadesh Harihar Senthilkumar</h1>
-      <p class="muted">MS in Information Technology @ ASU • Aspiring Cloud Engineer</p>
+        <div class="hero-text">
+          <h1>Yadesh Harihar<br>Senthilkumar<span class="cursor-blink">|</span></h1>
+          <p class="muted">MS in Information Technology @ ASU • Aspiring Cloud Engineer</p>
+          <h2 class="hero-title">Building cloud infrastructure for real-world scale</h2>
+          <p id="typedText" class="hero-desc"></p>
 
-      <h2 class="hero-title">Building cloud infrastructure for real-world scale</h2>
-      <p id="typedText" class="hero-desc">I design, deploy, and secure cloud platforms with IaC, CICD, and observability.</p>
-      <div class="stats-grid">
-        <div class="stat"><h3>12+</h3><p>Projects</p></div>
-        <div class="stat"><h3>8</h3><p>Certifications</p></div>
-        <div class="stat"><h3>100%</h3><p>Deployment success</p></div>
+          <div class="stats-grid">
+            <div class="stat"><h3>12+</h3><p>Projects</p></div>
+            <div class="stat"><h3>8</h3><p>Certifications</p></div>
+            <div class="stat"><h3>4</h3><p>Cloud Platforms</p></div>
+          </div>
+
+          <div class="btns">
+            <a class="btn" href="assets/resume/Yadesh_Harihar_Resume.pdf" target="_blank" rel="noopener" aria-label="Download resume (PDF)">Resume</a>
+            <a class="btn secondary" href="https://github.com/yadeshS" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a class="btn secondary" href="https://www.linkedin.com/in/yadeshharihar-s" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </div>
+        </div>
       </div>
-
-      <div class="stats-grid">
-        <div class="stat"><h3>12+</h3><p>Projects</p></div>
-        <div class="stat"><h3>8</h3><p>Certifications</p></div>
-        <div class="stat"><h3>4</h3><p>Cloud Platforms</p></div>
-      </div>
-
-      <div class="btns">
-        <a class="btn" href="assets/resume/Yadesh_Harihar_Resume.pdf" target="_blank" rel="noopener" aria-label="Download resume (PDF)">Resume</a>
-        <a class="btn secondary" href="https://github.com/yadeshS" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a class="btn secondary" href="https://www.linkedin.com/in/yadeshharihar-s" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
     <!-- ABOUT -->
     <section id="about" class="section card reveal">
-      <h2>About</h2>
+      <h2 class="section-title">About Me</h2>
       <p>
-        I’m a Master’s student focused on cloud engineering fundamentals compute, storage, networking, IAM, and deployment.
-        I learn best by building and documenting projects, and I’m actively improving my skills in Python, SQL, and cloud services.
+        I'm a Master's student focused on cloud engineering fundamentals — compute, storage, networking, IAM, and deployment.
+        I learn best by building and documenting projects, and I'm actively improving my skills in Python, SQL, and cloud services.
       </p>
     </section>
 
-  <!-- PROJECTS -->
-<section id="projects" class="section reveal">
-  <h2 class="section-title">Projects</h2>
+    <!-- WHAT I DO -->
+    <section id="whatido" class="section reveal">
+      <div class="whatido-grid">
+        <div class="whatido-left">
+          <h2 class="whatido-heading">WHAT<br>I <span class="accent">DO</span></h2>
+        </div>
+        <div class="accordion" id="accordion">
 
-  <div class="row row-3">
-    <div class="card project-card reveal">
-      <h2>Emotion Recognition Using Text Analysis</h2>
-      <p class="muted">NLP • Python • Machine Learning</p>
-      <p class="mt10">
-        Developed a text-based emotion classification system using Natural Language Processing techniques.
-        The model analyzes user input and predicts emotional categories such as happiness, anger,
-        sadness, and fear based on learned patterns from labeled datasets.
-      </p>
-      <p class="mt12">
-        <a class="btn secondary"
-          href="https://github.com/YUVARAJ1110/20CS713_PROJECTPHASE1_C10"
-          target="_blank"
-          rel="noopener noreferrer">Repo</a>
-      </p>
-    </div>
+          <div class="accordion-item open">
+            <div class="accordion-header" role="button" tabindex="0" aria-expanded="true">
+              <h3 class="accordion-title">BUILD</h3>
+              <span class="accordion-icon">↓</span>
+            </div>
+            <div class="accordion-body">
+              <p class="muted mt6">Cloud Infrastructure</p>
+              <p>Designing and deploying scalable cloud infrastructure on AWS using Terraform and CloudFormation. From compute and storage to networking, IAM, and cost optimization.</p>
+              <div class="tags mt10">
+                <span class="tag">AWS</span>
+                <span class="tag">Terraform</span>
+                <span class="tag">CloudFormation</span>
+                <span class="tag">IAM</span>
+                <span class="tag">VPC</span>
+                <span class="tag">S3</span>
+              </div>
+            </div>
+          </div>
 
-    <div class="card project-card reveal">
-      <h2>Senthil Velan Driving School Management System</h2>
-      <p class="muted">React Native • Node.js • Express.js • MongoDB • TOTP MFA</p>
-      <p class="mt10">
-        Built a full-stack digital management system for a real driving school business in Tamil Nadu, replacing manual paper-based operations with a secure web portal and mobile app. The system includes customer record management, revenue dashboards, booking and staff tracking, fee monitoring, and role-based secure login with two-factor authentication.
-      </p>
-      <p class="mt10">
-        Developed both staff/owner web access and mobile-based owner access connected to a shared live database, improving operational visibility, security, and day-to-day efficiency.
-      </p>
-      <p class="mt12">
-        <a class="btn secondary" href="https://github.com/yadeshS/senthilvelandrivingschool" target="_blank" rel="noopener noreferrer">Repo</a>
-      </p>
-    </div>
-  </div>
-</section>
+          <div class="accordion-item">
+            <div class="accordion-header" role="button" tabindex="0" aria-expanded="false">
+              <h3 class="accordion-title">DEVELOP</h3>
+              <span class="accordion-icon">↓</span>
+            </div>
+            <div class="accordion-body">
+              <p class="muted mt6">Full-Stack Applications</p>
+              <p>Building full-stack applications, REST APIs, and data pipelines. Writing clean, maintainable code across the stack — from database to UI.</p>
+              <div class="tags mt10">
+                <span class="tag">Python</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">Node.js</span>
+                <span class="tag">React Native</span>
+                <span class="tag">MongoDB</span>
+                <span class="tag">SQL</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <div class="accordion-header" role="button" tabindex="0" aria-expanded="false">
+              <h3 class="accordion-title">AUTOMATE</h3>
+              <span class="accordion-icon">↓</span>
+            </div>
+            <div class="accordion-body">
+              <p class="muted mt6">CI/CD & DevOps</p>
+              <p>Streamlining deployments with CI/CD pipelines, containerization, and monitoring. Reducing toil, increasing reliability and deployment velocity.</p>
+              <div class="tags mt10">
+                <span class="tag">GitHub Actions</span>
+                <span class="tag">Docker</span>
+                <span class="tag">CI/CD</span>
+                <span class="tag">Linux</span>
+                <span class="tag">Bash</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE TIMELINE -->
+    <section id="experience" class="section reveal">
+      <h2 class="section-title experience-heading">My career &amp; <span class="accent">experience</span></h2>
+      <div class="timeline">
+
+        <!-- Update with your real experience -->
+        <div class="timeline-item reveal">
+          <div class="timeline-left">
+            <h3 class="timeline-role">Graduate Student</h3>
+            <p class="accent timeline-org">Arizona State University</p>
+          </div>
+          <div class="timeline-year">NOW</div>
+          <div class="timeline-right">
+            <p>Pursuing MS in Information Technology with a focus on cloud infrastructure, data engineering, and DevOps. Building real-world projects across AWS, Terraform, and full-stack development.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-left">
+            <h3 class="timeline-role">Full-Stack Developer</h3>
+            <p class="accent timeline-org">Freelance / Personal Projects</p>
+          </div>
+          <div class="timeline-year">2024</div>
+          <div class="timeline-right">
+            <p>Built a real-world driving school management system — full-stack web + mobile app (React Native, Node.js, MongoDB) replacing paper-based operations with secure digital workflows, TOTP MFA, and live dashboards.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-left">
+            <h3 class="timeline-role">ML Engineer</h3>
+            <p class="accent timeline-org">Academic Project</p>
+          </div>
+          <div class="timeline-year">2023</div>
+          <div class="timeline-right">
+            <p>Developed a text-based emotion classification system using NLP and machine learning, predicting emotional categories from user input with labeled datasets.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section reveal">
+      <h2 class="section-title">My <span class="accent">Work</span></h2>
+      <div class="projects-editorial">
+
+        <div class="project-editorial reveal">
+          <div class="project-num">01</div>
+          <div class="project-content">
+            <h3 class="project-editorial-title">Senthil Velan Driving School Management System</h3>
+            <p class="muted">Full-Stack • React Native • Node.js • Express.js • MongoDB • TOTP MFA</p>
+            <p class="mt10">Built a full-stack digital management system replacing manual paper-based operations with a secure web portal and mobile app. Includes customer record management, revenue dashboards, booking tracking, fee monitoring, and role-based login with two-factor authentication.</p>
+            <div class="tags mt12">
+              <span class="tag">React Native</span>
+              <span class="tag">Node.js</span>
+              <span class="tag">MongoDB</span>
+              <span class="tag">TOTP MFA</span>
+            </div>
+            <div class="project-links mt12">
+              <a class="btn secondary small" href="https://github.com/yadeshS/senthilvelandrivingschool" target="_blank" rel="noopener noreferrer">View GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-editorial reveal">
+          <div class="project-num">02</div>
+          <div class="project-content">
+            <h3 class="project-editorial-title">Emotion Recognition Using Text Analysis</h3>
+            <p class="muted">NLP • Python • Machine Learning</p>
+            <p class="mt10">A text-based emotion classification system using NLP. The model analyzes user input and predicts emotional categories — happiness, anger, sadness, fear — based on learned patterns from labeled datasets.</p>
+            <div class="tags mt12">
+              <span class="tag">Python</span>
+              <span class="tag">NLP</span>
+              <span class="tag">Machine Learning</span>
+              <span class="tag">Classification</span>
+            </div>
+            <div class="project-links mt12">
+              <a class="btn secondary small" href="https://github.com/YUVARAJ1110/20CS713_PROJECTPHASE1_C10" target="_blank" rel="noopener noreferrer">View GitHub</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TECH STACK (3D) -->
+    <section id="techstack" class="section reveal">
+      <h2 class="techstack-heading">MY <span class="accent">TECHSTACK</span></h2>
+      <div class="canvas-wrapper">
+        <canvas id="tech-canvas"></canvas>
+        <p class="canvas-fallback muted">Python • AWS • Docker • Terraform • Git • SQL • JavaScript • Node.js • React Native • Linux</p>
+      </div>
+    </section>
 
     <!-- CERTIFICATIONS -->
     <section id="certs" class="section card reveal">
-  <div class="section-head">
-    <h2>Certifications</h2>
-    <p class="muted">Current progress and verified credentials.</p>
-  </div>
+      <div class="section-head">
+        <h2 class="section-title">Certifications</h2>
+        <p class="muted">Current progress and verified credentials.</p>
+      </div>
 
-  <div class="cert-grid">
-    <!-- CERT 1 -->
-    <article class="cert">
-      <div class="cert-top">
-        <div class="cert-left">
-          <img
-            class="cert-logo"
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg"
-            alt="AWS"
-            loading="lazy"
-            referrerpolicy="no-referrer"
-            onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg';"
-          />
-          <div>
-            <h3 class="cert-title">AWS Certified Cloud Practitioner (CLF-C02)</h3>
-            <p class="muted cert-meta">Amazon Web Services • In progress (target: March 2026)</p>
+      <div class="cert-grid">
+        <article class="cert">
+          <div class="cert-top">
+            <div class="cert-left">
+              <img
+                class="cert-logo"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg"
+                alt="AWS" loading="lazy" referrerpolicy="no-referrer"
+                onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg';"
+              />
+              <div>
+                <h3 class="cert-title">AWS Certified Cloud Practitioner (CLF-C02)</h3>
+                <p class="muted cert-meta">Amazon Web Services • In progress (target: March 2026)</p>
+              </div>
+            </div>
+            <span class="badge inprogress">In Progress</span>
           </div>
-        </div>
-
-        <span class="badge inprogress">In Progress</span>
-      </div>
-
-      <!-- progress bar (edit width) -->
-      <div class="progress" aria-label="Certification progress">
-        <span style="width:80%"></span>
-      </div>
-
-      <div class="cert-actions">
-        <!-- Put your credential link when you have it -->
-        <a class="btn secondary small" href="#" target="_blank" rel="noreferrer noopener">Details</a>
-      </div>
-    </article>
-
-    <!-- CERT 2 -->
-    <article class="cert">
-      <div class="cert-top">
-        <div class="cert-left">
-          <div class="cert-icon">🎓</div>
-          <div>
-            <h3 class="cert-title">Databricks Fundamentals</h3>
-            <p class="muted cert-meta">Databricks • Planned / May 2026</p>
+          <div class="progress" aria-label="Certification progress">
+            <span style="width:80%"></span>
           </div>
-        </div>
+          <div class="cert-actions">
+            <a class="btn secondary small" href="#" target="_blank" rel="noreferrer noopener">Details</a>
+          </div>
+        </article>
 
-        <span class="badge planned">Planned</span>
+        <article class="cert">
+          <div class="cert-top">
+            <div class="cert-left">
+              <div class="cert-icon">🎓</div>
+              <div>
+                <h3 class="cert-title">Databricks Fundamentals</h3>
+                <p class="muted cert-meta">Databricks • Planned / May 2026</p>
+              </div>
+            </div>
+            <span class="badge planned">Planned</span>
+          </div>
+          <div class="cert-actions">
+            <a class="btn secondary small" href="#" target="_blank" rel="noreferrer noopener">Details</a>
+          </div>
+        </article>
       </div>
-
-      <div class="cert-actions">
-        <a class="btn secondary small" href="#" target="_blank" rel="noreferrer noopener">Details</a>
-      </div>
-    </article>
-  </div>
-</section>
-
-    <!-- SKILLS -->
-  <section id="skills" class="section card reveal">
-  <h2>Skills</h2>
-
-  <div class="skills-grid">
-    <div class="skill">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
-      <span>Python</span>
-    </div>
-
-    <div class="skill">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
-      <span>JavaScript</span>
-    </div>
-
-    <div class="skill">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML">
-      <span>HTML</span>
-    </div>
-
-    <div class="skill">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS">
-      <span>CSS</span>
-    </div>
-
-    <div class="skill">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg';">
-      <span>AWS</span>
-    </div>
-
-    <div class="skill">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
-      <span>Git</span>
-    </div>
-
-    <div class="skill">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
-      <span>Docker</span>
-    </div>
-
-    <div class="skill">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL">
-      <span>SQL</span>
-    </div>
-  </div>
-</section>
+    </section>
 
     <!-- CONTACT -->
     <section id="contact" class="section card reveal">
-      <h2>Contact</h2>
+      <h2 class="section-title">Contact</h2>
       <p>Email: <span class="muted">ysenthi2@asu.edu</span></p>
       <p class="mt6">Location: <span class="muted">Arizona, USA</span></p>
     </section>
 
     <section class="section card cta reveal">
-  <h2>Send me a message</h2>
-
-  <p class="cta-text">
-    Have a question, opportunity, or idea in mind?
-    Drop me a message and I’ll get back to you.
-  </p>
-
-  <form class="contact-form" action="https://formspree.io/f/xbdkyrrk" method="POST">
-    <input type="text" name="name" placeholder="Your name" required />
-    <input type="email" name="email" placeholder="Your email" required />
-    <textarea name="message" rows="4" placeholder="Your message" required></textarea>
-
-    <button type="submit" class="btn">Send Message</button>
-  </form>
-</section>
+      <h2>Send me a message</h2>
+      <p class="cta-text">Have a question, opportunity, or idea in mind? Drop me a message and I'll get back to you.</p>
+      <form class="contact-form" action="https://formspree.io/f/xbdkyrrk" method="POST">
+        <input type="text" name="name" placeholder="Your name" required />
+        <input type="email" name="email" placeholder="Your email" required />
+        <textarea name="message" rows="4" placeholder="Your message" required></textarea>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </section>
 
     <footer class="muted footer">
       <p>© <span id="year"></span> Yadesh Harihar</p>
     </footer>
   </main>
 
-  <script src="script.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
