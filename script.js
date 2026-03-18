@@ -84,3 +84,13 @@ function typeLoop() {
 }
 
 typeLoop();
+
+// Add scroll indicator to hero
+const heroSection = document.querySelector('.hero-section');
+if (heroSection) {
+  const indicator = document.createElement('div');
+  indicator.className = 'scroll-indicator';
+  indicator.innerHTML = '<span></span>';
+  heroSection.appendChild(indicator);
+}
+
