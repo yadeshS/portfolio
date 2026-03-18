@@ -48,3 +48,39 @@ linkEls.forEach(a => a.addEventListener("click", () => {
     menuBtn.setAttribute("aria-expanded", "false");
   }
 }));
+
+// Simple typewriter effect for hero subtitle
+const typedEl = document.getElementById("typedText");
+const typingStrings = [
+  "I design, deploy, and secure cloud platforms with IaC, CICD, and observability.",
+  "I automate deployments with Terraform, CloudFormation, and GitHub Actions.",
+  "I monitor and optimize cloud costs for scalable production workloads."
+];
+let currentString = 0;
+let currentIndex = 0;
+let isDeleting = false;
+
+function typeLoop() {
+  if (!typedEl) return;
+  const fullText = typingStrings[currentString];
+  typedEl.textContent = fullText.substring(0, currentIndex);
+
+  if (!isDeleting) {
+    currentIndex++;
+    if (currentIndex > fullText.length) {
+      isDeleting = true;
+      setTimeout(typeLoop, 1800);
+      return;
+    }
+  } else {
+    currentIndex--;
+    if (currentIndex === 0) {
+      isDeleting = false;
+      currentString = (currentString + 1) % typingStrings.length;
+    }
+  }
+
+  setTimeout(typeLoop, isDeleting ? 40 : 70);
+}
+
+typeLoop();
