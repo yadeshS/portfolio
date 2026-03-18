@@ -222,13 +222,36 @@ a.btn.secondary:hover{
 /* Projects grid */
 .row {
   display:grid;
-  gap:14px;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap:18px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  justify-content: center;
+  width: 100%;
 }
 
-/* Optional: keep an explicit 3-column layout for larger screens */
-@media (min-width: 1140px){
+/* Make featured project stand out on wide screens */
+@media (min-width: 1040px) {
+  .project-card.featured {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Optional: keep an explicit 3-column layout for very large screens */
+@media (min-width: 1300px){
   .row-3 { grid-template-columns: repeat(3, 1fr); }
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 240px;
+}
+
+.project-card p {
+  flex: 1;
+}
+
+.project-card .btn {
+  align-self: flex-start;
 }
 
 .project-card{ position: relative; overflow: hidden; }
