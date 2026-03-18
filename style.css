@@ -270,8 +270,25 @@ a.btn.secondary:hover{
 /* Featured project spans full grid width */
 .project-card.featured {
   grid-column: 1 / -1;
+  position: relative;
 }
 
+.project-card.featured::before {
+  content: "Featured";
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  background: rgba(120, 140, 255, 0.24);
+  border: 1px solid rgba(120, 140, 255, 0.35);
+  color: rgba(232, 238, 252, 0.92);
+  backdrop-filter: blur(8px);
+  pointer-events: none;
+}
 /* Tags */
 .tags{ display:flex; flex-wrap:wrap; gap: 8px; }
 .tag{
