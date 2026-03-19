@@ -350,24 +350,52 @@
 
     <!-- CONTACT -->
     <section id="contact" class="section reveal">
-      <h2 class="section-title">Contact</h2>
-      <p>Email: <span class="muted">ysenthi2@asu.edu</span></p>
-      <p class="mt6">Location: <span class="muted">Arizona, USA</span></p>
+      <div class="contact-inner">
+
+        <!-- Left: stacked social icons -->
+        <div class="contact-icons">
+          <a href="https://github.com/yadeshS" target="_blank" rel="noopener noreferrer" class="contact-icon-link" aria-label="GitHub">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" />
+          </a>
+          <a href="https://www.linkedin.com/in/yadeshharihar-s" target="_blank" rel="noopener noreferrer" class="contact-icon-link" aria-label="LinkedIn">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" />
+          </a>
+          <a href="https://twitter.com/yadeshS" target="_blank" rel="noopener noreferrer" class="contact-icon-link" aria-label="Twitter / X">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/twitter/twitter-original.svg" alt="X" />
+          </a>
+        </div>
+
+        <!-- Right: heading + info grid -->
+        <div class="contact-main">
+          <h2 class="contact-heading">CONTACT</h2>
+          <div class="contact-grid">
+            <div class="contact-col">
+              <p class="contact-label">Email</p>
+              <a href="mailto:ysenthi2@asu.edu" class="contact-detail-link">ysenthi2@asu.edu</a>
+            </div>
+            <div class="contact-col">
+              <p class="contact-label">Social</p>
+              <a href="https://github.com/yadeshS" target="_blank" rel="noopener noreferrer" class="contact-social-link">Github <span>↗</span></a>
+              <a href="https://www.linkedin.com/in/yadeshharihar-s" target="_blank" rel="noopener noreferrer" class="contact-social-link">Linkedin <span>↗</span></a>
+              <a href="https://twitter.com/yadeshS" target="_blank" rel="noopener noreferrer" class="contact-social-link">Twitter <span>↗</span></a>
+            </div>
+            <div class="contact-col">
+              <a href="assets/resume/Yadesh_Harihar_Resume.pdf" target="_blank" rel="noopener" class="btn-resume-dl">
+                ↓ Download Resume
+              </a>
+            </div>
+            <div class="contact-col">
+              <p>Built by <span class="accent">Yadesh Harihar</span></p>
+              <p class="muted" style="font-size:0.82rem;margin-top:6px;">© <span id="year"></span> Yadesh Harihar. All Rights Reserved.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </section>
 
-    <section class="section cta reveal">
-      <h2>Send me a message</h2>
-      <p class="cta-text">Have a question, opportunity, or idea in mind? Drop me a message and I'll get back to you.</p>
-      <form class="contact-form" action="https://formspree.io/f/xbdkyrrk" method="POST">
-        <input type="text" name="name" placeholder="Your name" required />
-        <input type="email" name="email" placeholder="Your email" required />
-        <textarea name="message" rows="4" placeholder="Your message" required></textarea>
-        <button type="submit" class="btn">Send Message</button>
-      </form>
-    </section>
-
-    <footer class="muted footer">
-      <p>© <span id="year"></span> Yadesh Harihar</p>
+    <footer class="muted footer" style="display:none">
+      <p>© <span id="year2"></span> Yadesh Harihar</p>
     </footer>
   </main>
 
