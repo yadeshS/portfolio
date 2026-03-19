@@ -23,7 +23,7 @@ document.addEventListener('mousemove', e => {
 })();
 
 // ===== SCROLL REVEAL =====
-const revealEls = document.querySelectorAll(".reveal");
+const revealEls = document.querySelectorAll(".reveal, .reveal-left");
 const io = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
