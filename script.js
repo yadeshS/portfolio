@@ -108,6 +108,17 @@ if (heroSection) {
 }
 
 // ===== ACCORDION =====
+// Ensure all bodies are hidden on load except the first open one
+document.querySelectorAll('.accordion-item').forEach(item => {
+  const body = item.querySelector('.accordion-body');
+  if (!body) return;
+  if (!item.classList.contains('open')) {
+    body.style.display = 'none';
+  } else {
+    body.style.display = 'block';
+  }
+});
+
 document.querySelectorAll('.accordion-header').forEach(header => {
   const toggle = () => {
     const item   = header.closest('.accordion-item');
@@ -116,11 +127,15 @@ document.querySelectorAll('.accordion-header').forEach(header => {
     document.querySelectorAll('.accordion-item').forEach(i => {
       i.classList.remove('open');
       i.querySelector('.accordion-header').setAttribute('aria-expanded', 'false');
+      const b = i.querySelector('.accordion-body');
+      if (b) b.style.display = 'none';
     });
     // Open clicked if it was closed
     if (!isOpen) {
       item.classList.add('open');
       header.setAttribute('aria-expanded', 'true');
+      const b = item.querySelector('.accordion-body');
+      if (b) b.style.display = 'block';
     }
   };
 
@@ -268,9 +283,23 @@ function initTechStack() {
   });
 }
 
-// Init after everything loads
-if (typeof THREE !== 'undefined') {
-  initTechStack();
-} else {
-  window.addEventListener('load', initTechStack);
+// Init 3D when section scrolls into view (ensures canvas has dimensions)
+function tryInitTechStack() {
+  if (typeof THREE === 'undefined') {
+    const fallback = document.querySelector('.canvas-fallback');
+    if (fallback) fallback.style.display = 'block';
+    return;
+  }
+  const techSection = document.getElementById('techstack');
+  if (!techSection) return;
+
+  const observer = new IntersectionObserver(entries => {
+    if (entries[0].isIntersecting) {
+      observer.disconnect();
+      initTechStack();
+    }
+  }, { threshold: 0.1 });
+  observer.observe(techSection);
 }
+
+window.addEventListener('load', tryInitTechStack);

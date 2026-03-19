@@ -743,17 +743,17 @@ a.btn.small{
 /* ===== CURSOR ORB ===== */
 #cursor-orb {
   position: fixed;
-  width: 26px;
-  height: 26px;
-  background: radial-gradient(circle, rgba(0,255,160,1), rgba(0,200,120,0.3));
+  width: 22px;
+  height: 22px;
+  background: #00ffa0;
   border-radius: 50%;
   pointer-events: none;
   z-index: 9999;
   top: 0;
   left: 0;
   transform: translate(-50%, -50%);
-  box-shadow: 0 0 18px rgba(0,255,160,0.9), 0 0 44px rgba(0,255,160,0.4);
-  mix-blend-mode: screen;
+  box-shadow: 0 0 14px rgba(0,255,160,0.8), 0 0 32px rgba(0,255,160,0.35);
+  opacity: 0.92;
 }
 @media (hover: none) {
   #cursor-orb { display: none; }
@@ -783,6 +783,7 @@ body { scroll-snap-type: none; }
   grid-template-columns: 1fr 1.2fr;
   gap: 48px;
   align-items: start;
+  width: 100%;
 }
 @media (max-width: 760px) {
   .whatido-grid { grid-template-columns: 1fr; gap: 28px; }
@@ -835,10 +836,12 @@ body { scroll-snap-type: none; }
 
 .accordion-header {
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: space-between;
   cursor: pointer;
   user-select: none;
+  gap: 12px;
 }
 .accordion-header:focus-visible {
   outline: 1px dashed rgba(0,255,160,0.5);
@@ -847,31 +850,33 @@ body { scroll-snap-type: none; }
 
 .accordion-title {
   margin: 0;
+  padding: 0;
   font-size: clamp(1.3rem, 3vw, 1.8rem);
   font-weight: 900;
   letter-spacing: 3px;
   color: rgba(232,238,252,0.9);
+  flex: 1;
 }
 
 .accordion-icon {
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: rgba(0,255,160,0.85);
   transition: transform 320ms ease;
   display: inline-block;
+  flex-shrink: 0;
+  line-height: 1;
 }
 .accordion-item.open .accordion-icon {
   transform: rotate(180deg);
 }
 
+/* Closed by default, open when .open class is present */
 .accordion-body {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 380ms ease, padding-top 380ms ease;
-  padding-top: 0;
+  display: none;
+  padding-top: 14px;
 }
 .accordion-item.open .accordion-body {
-  max-height: 420px;
-  padding-top: 14px;
+  display: block;
 }
 
 /* ===== EXPERIENCE TIMELINE ===== */
