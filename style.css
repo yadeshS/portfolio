@@ -773,9 +773,11 @@ a.btn.small{
   50% { opacity: 0; }
 }
 
-/* Remove scroll snap — too many sections */
-body { scroll-snap-type: none; }
-.section { scroll-snap-align: none; }
+/* Scroll snap — full-page sequential flow */
+html { height: 100%; overflow-y: scroll; }
+body { scroll-snap-type: y mandatory; }
+.section,
+.hero { scroll-snap-align: start; }
 
 /* ===== WHAT I DO ===== */
 .whatido-grid {
