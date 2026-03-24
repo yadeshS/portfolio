@@ -144,90 +144,89 @@
   requestAnimationFrame(draw);
 })();
 
-// ===== HERO → ABOUT PHOTO TRANSITION (bidirectional) =====
+// ===== HERO → ABOUT PHOTO TRANSITION (scroll-driven) =====
 (function initHeroTransition() {
+  const heroSection  = document.querySelector('.hero-section');
   const heroLeft     = document.querySelector('.hero-left');
   const heroRight    = document.querySelector('.hero-right');
   const heroCenter   = document.querySelector('.hero-center');
   const heroPic      = document.querySelector('.hero-photo');
   const aboutSection = document.getElementById('about');
   const aboutPhoto   = document.querySelector('.about-photo');
-  if (!heroLeft || !heroRight || !heroPic || !aboutSection || !aboutPhoto) return;
+  const aboutPic     = document.querySelector('.about-pic');
+  if (!heroSection || !heroLeft || !heroRight || !heroPic || !aboutSection || !aboutPhoto || !aboutPic) return;
 
-  aboutPhoto.style.opacity = '0';
-  let state = 'hero'; // 'hero' | 'about'
+  // Disable CSS transitions — JS drives these directly each frame
+  aboutPhoto.style.transition = 'none';
 
-  function getDeltas() {
+  let dx = 0, dy = 0, sc = 1, initBR = 130;
+  let rafId = null;
+
+  function lerp(a, b, t) { return a + (b - a) * t; }
+  function easeInOut(t) { return t < 0.5 ? 2*t*t : 1 - Math.pow(-2*t+2,2)/2; }
+  function clamp(v, lo, hi) { return Math.max(lo, Math.min(hi, v)); }
+
+  // Measure document-level offsets once, at natural layout (scrollY=0)
+  function computeOffsets() {
+    const saved = aboutPhoto.style.transform;
+    aboutPhoto.style.transform = 'none';
+    void aboutPhoto.offsetWidth;
+
     const hr = heroPic.getBoundingClientRect();
     const ar = aboutPhoto.getBoundingClientRect();
-    return {
-      dx: (hr.left + hr.width  / 2) - (ar.left + ar.width  / 2),
-      dy: (hr.top  + hr.height / 2) - (ar.top  + ar.height / 2),
-      sc: hr.width / Math.max(ar.width, 1),
-    };
+
+    dx    = (hr.left + hr.width  / 2) - (ar.left + ar.width  / 2);
+    dy    = (hr.top  + hr.height / 2) - (ar.top  + ar.height / 2);
+    sc    = hr.width / Math.max(ar.width, 1);
+    initBR = ar.width / 2; // pixel radius that makes about-pic a circle at start
+
+    aboutPhoto.style.transform = saved;
   }
 
-  const obs = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
+  function update() {
+    const heroH = heroSection.offsetHeight;
+    // Animation window: 20%–85% of hero scroll depth
+    const p  = clamp((window.scrollY - heroH * 0.2) / (heroH * 0.65), 0, 1);
+    const ep = easeInOut(p);
 
-      // --- FORWARD: scroll down into about ---
-      if (entry.isIntersecting && state === 'hero') {
-        state = 'about';
-        const { dx, dy, sc } = getDeltas();
+    if (p <= 0) {
+      // Let CSS animations handle the hero text at rest
+      heroLeft.style.transform   = '';
+      heroLeft.style.opacity     = '';
+      heroRight.style.transform  = '';
+      heroRight.style.opacity    = '';
+      heroCenter.style.opacity   = '';
+      aboutPhoto.style.opacity   = '0';
+      aboutPhoto.style.transform = `translate(${dx}px, ${dy}px) scale(${sc})`;
+      aboutPic.style.borderRadius = `${initBR}px`;
+    } else {
+      // Hero text slides to opposite corners
+      heroLeft.style.transform   = `translateX(${-160 * ep}px)`;
+      heroLeft.style.opacity     = String(1 - ep);
+      heroRight.style.transform  = `translateX(${160 * ep}px)`;
+      heroRight.style.opacity    = String(1 - ep);
+      heroCenter.style.opacity   = String(clamp(1 - ep * 1.4, 0, 1));
 
-        // Jump photo to hero position, then fly to natural position
-        aboutPhoto.style.transition = 'none';
-        aboutPhoto.style.transform  = `translate(${dx}px, ${dy}px) scale(${sc})`;
-        aboutPhoto.style.opacity    = '1';
-        void aboutPhoto.offsetWidth;
-        aboutPhoto.style.transition = 'transform 0.95s cubic-bezier(0.22,1,0.36,1), opacity 0.6s ease';
-        aboutPhoto.style.transform  = 'translate(0,0) scale(1)';
+      // About photo morphs from hero circle → about rectangle
+      aboutPhoto.style.opacity      = String(clamp(ep * 1.5, 0, 1));
+      aboutPhoto.style.transform    = `translate(${dx * (1 - ep)}px, ${dy * (1 - ep)}px) scale(${lerp(sc, 1, ep)})`;
+      aboutPic.style.borderRadius   = `${lerp(initBR, 18, ep)}px`;
+    }
 
-        // Hero text flies out to corners
-        heroLeft.style.transition  = 'transform 0.65s cubic-bezier(0.4,0,1,1), opacity 0.55s ease';
-        heroLeft.style.transform   = 'translateX(-160px)';
-        heroLeft.style.opacity     = '0';
+    rafId = null;
+  }
 
-        heroRight.style.transition = 'transform 0.65s cubic-bezier(0.4,0,1,1), opacity 0.55s ease';
-        heroRight.style.transform  = 'translateX(160px)';
-        heroRight.style.opacity    = '0';
+  window.addEventListener('load', () => {
+    computeOffsets();
+    aboutPhoto.style.opacity    = '0';
+    aboutPhoto.style.transform  = `translate(${dx}px, ${dy}px) scale(${sc})`;
+    aboutPic.style.borderRadius = `${initBR}px`;
+    update();
+  });
 
-        heroCenter.style.transition = 'opacity 0.45s ease';
-        heroCenter.style.opacity    = '0';
-      }
-
-      // --- REVERSE: scroll back up, about leaving viewport from bottom ---
-      else if (!entry.isIntersecting && state === 'about' && entry.boundingClientRect.top > 0) {
-        state = 'hero';
-        const { dx, dy, sc } = getDeltas();
-
-        // Fly photo back up to the hero position, then hide it
-        aboutPhoto.style.transition = 'transform 0.85s cubic-bezier(0.22,1,0.36,1), opacity 0.4s ease 0.4s';
-        aboutPhoto.style.transform  = `translate(${dx}px, ${dy}px) scale(${sc})`;
-        aboutPhoto.style.opacity    = '0';
-
-        // Reset transform silently after animation so it's ready for next forward pass
-        setTimeout(() => {
-          aboutPhoto.style.transition = 'none';
-          aboutPhoto.style.transform  = 'translate(0,0) scale(1)';
-        }, 900);
-
-        // Hero text slides back in from corners
-        heroLeft.style.transition  = 'transform 0.65s cubic-bezier(0.22,1,0.36,1), opacity 0.55s ease';
-        heroLeft.style.transform   = 'translateX(0)';
-        heroLeft.style.opacity     = '1';
-
-        heroRight.style.transition = 'transform 0.65s cubic-bezier(0.22,1,0.36,1), opacity 0.55s ease';
-        heroRight.style.transform  = 'translateX(0)';
-        heroRight.style.opacity    = '1';
-
-        heroCenter.style.transition = 'opacity 0.5s ease';
-        heroCenter.style.opacity    = '1';
-      }
-    });
-  }, { threshold: 0.2 });
-
-  obs.observe(aboutSection);
+  window.addEventListener('scroll', () => {
+    if (!rafId) rafId = requestAnimationFrame(update);
+  }, { passive: true });
 })();
 
 // ===== YEAR =====
