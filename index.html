@@ -42,25 +42,12 @@
   <!-- NAVBAR -->
   <nav class="nav">
     <div class="nav-inner">
-      <a class="brand" href="#top">Yadesh</a>
-
-      <div class="top-info" aria-hidden="true">
-        <span class="top-email">ysenthi2@asu.edu</span>
-        <span class="top-status">Cloud Engineer in Arizona</span>
-      </div>
-
-      <button type="button" class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
-        ☰ Menu
-      </button>
-
+      <a class="brand" href="#top">YH</a>
+      <a href="mailto:ysenthi2@asu.edu" class="nav-email">ysenthi2@asu.edu</a>
       <div class="nav-links" id="navLinks">
-        <a href="#about">About</a>
-        <a href="#whatido">What I Do</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="#techstack">Tech Stack</a>
-        <a href="#certs">Certs</a>
-        <a href="#contact">Contact</a>
+        <a href="#about">ABOUT</a>
+        <a href="#projects">WORK</a>
+        <a href="#contact">CONTACT</a>
       </div>
     </div>
   </nav>
@@ -83,28 +70,44 @@
 
     <!-- HERO -->
     <section class="hero hero-section">
-      <div class="hero-intro">
-        <div class="hero-photo">
-          <div class="profile-ring"></div>
-          <img
-            src="./assets/IMG_4780.jpeg"
-            alt="Yadesh Harihar profile photo"
-            class="profile-pic"
-            loading="eager"
-            decoding="async"
-          />
+      <div class="hero-three">
+        <div class="hero-left">
+          <p class="hero-greeting">Hello! I'm</p>
+          <h1 class="hero-name"><span id="heroTyped"></span><span class="cursor-blink">|</span></h1>
         </div>
-        <h1 class="hero-name"><span id="heroTyped"></span><span class="cursor-blink">|</span></h1>
+        <div class="hero-center">
+          <div class="hero-photo">
+            <div class="profile-ring"></div>
+            <img
+              src="./assets/IMG_4780.jpeg"
+              alt="Yadesh Harihar profile photo"
+              class="profile-pic"
+              loading="eager"
+              decoding="async"
+            />
+          </div>
+        </div>
+        <div class="hero-right">
+          <p class="hero-role-sm">Aspiring</p>
+          <h2 class="hero-role-big">CLOUD<br><span class="accent">ENGINEER</span></h2>
+        </div>
       </div>
     </section>
 
     <!-- ABOUT -->
     <section id="about" class="section reveal">
-      <h2 class="section-title">About Me</h2>
-      <p>
-        I'm a Master's student focused on cloud engineering fundamentals — compute, storage, networking, IAM, and deployment.
-        I learn best by building and documenting projects, and I'm actively improving my skills in Python, SQL, and cloud services.
-      </p>
+      <div class="about-grid">
+        <div class="about-photo reveal-left">
+          <img src="./assets/IMG_4780.jpeg" alt="Yadesh Harihar" class="about-pic" loading="lazy" />
+        </div>
+        <div class="about-text">
+          <h2 class="about-heading">ABOUT ME</h2>
+          <p>
+            I'm a Master's student focused on cloud engineering fundamentals — compute, storage, networking, IAM, and deployment.
+            I learn best by building and documenting projects, and I'm actively improving my skills in Python, SQL, and cloud services.
+          </p>
+        </div>
+      </div>
     </section>
 
     <!-- WHAT I DO -->

@@ -34,15 +34,6 @@ const io = new IntersectionObserver((entries) => {
 }, { threshold: 0.10 });
 revealEls.forEach(el => io.observe(el));
 
-// ===== MOBILE MENU =====
-const menuBtn  = document.getElementById("menuBtn");
-const navLinks = document.getElementById("navLinks");
-
-menuBtn.addEventListener("click", () => {
-  const open = navLinks.classList.toggle("open");
-  menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
-});
-
 // ===== ACTIVE NAV HIGHLIGHT =====
 const linkEls    = Array.from(document.querySelectorAll(".nav-links a"));
 const sectionIds = ["about","whatido","experience","projects","techstack","certs","contact"];
@@ -58,13 +49,6 @@ const navObserver = new IntersectionObserver(entries => {
 }, { rootMargin: '-40% 0px -55% 0px', threshold: 0.1 });
 sections.forEach(s => navObserver.observe(s));
 
-// Close menu on link click (mobile)
-linkEls.forEach(a => a.addEventListener("click", () => {
-  if (navLinks.classList.contains("open")) {
-    navLinks.classList.remove("open");
-    menuBtn.setAttribute("aria-expanded", "false");
-  }
-}));
 
 // ===== HERO NAME TYPEWRITER =====
 const heroTyped = document.getElementById('heroTyped');
