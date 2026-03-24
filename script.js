@@ -66,37 +66,21 @@ linkEls.forEach(a => a.addEventListener("click", () => {
   }
 }));
 
-// ===== TYPEWRITER =====
-const typedEl = document.getElementById("typedText");
-const typingStrings = [
-  "I design, deploy, and secure cloud platforms with IaC, CI/CD, and observability.",
-  "I automate deployments with Terraform, CloudFormation, and GitHub Actions.",
-  "I monitor and optimize cloud costs for scalable production workloads."
-];
-let currentString = 0, currentIndex = 0, isDeleting = false;
+// ===== HERO NAME TYPEWRITER =====
+const heroTyped = document.getElementById('heroTyped');
+const heroName  = 'Yadesh Harihar Senthilkumar';
+let heroIdx = 0;
 
-function typeLoop() {
-  if (!typedEl) return;
-  const fullText = typingStrings[currentString];
-  typedEl.textContent = fullText.substring(0, currentIndex);
-
-  if (!isDeleting) {
-    currentIndex++;
-    if (currentIndex > fullText.length) {
-      isDeleting = true;
-      setTimeout(typeLoop, 1800);
-      return;
-    }
-  } else {
-    currentIndex--;
-    if (currentIndex === 0) {
-      isDeleting = false;
-      currentString = (currentString + 1) % typingStrings.length;
-    }
+function typeHeroName() {
+  if (!heroTyped) return;
+  heroTyped.textContent = heroName.substring(0, heroIdx);
+  if (heroIdx < heroName.length) {
+    heroIdx++;
+    setTimeout(typeHeroName, 80);
   }
-  setTimeout(typeLoop, isDeleting ? 40 : 68);
 }
-typeLoop();
+// Start after photo animation finishes (0.3s delay + 0.9s duration + 0.1s buffer = 1.3s)
+setTimeout(typeHeroName, 1300);
 
 // ===== SCROLL INDICATOR (hero) =====
 const heroSection = document.querySelector('.hero-section');
